@@ -67,11 +67,15 @@ vagrant machine
 
 This will present the user with a series of options for running reports
 
-`Please Select Option:
+Please Select Option:
+
 1: Run Top Articles Report
+
 2: Run Top Authors Report
+
 3: Run Errors Greater That 1% Per Day Report
-4: Run All Reports`
+
+4: Run All Reports
 
 
 Choose the option for the report that you want to run.
