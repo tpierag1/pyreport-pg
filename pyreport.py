@@ -81,6 +81,7 @@ def main():
         top_articles()
         print('\n')
         print('[+] Reports Complete')
+        print('\n')
 
     if option == '2':
         print('\n')
@@ -89,6 +90,7 @@ def main():
         top_authors()
         print('\n')
         print('[+] Reports Complete')
+        print('\n')
 
     if option == '3':
         print('\n')
@@ -97,6 +99,7 @@ def main():
         errors()
         print('\n')
         print('[+] Reports Complete')
+        print('\n')
 
     if option == '4':
         print('\n')
