@@ -22,7 +22,8 @@ def top_articles():
     pop_articles = conn.cursor()
     pop_articles.execute('''select title, count(path) from articles join log on
                         articles.slug = substring(log.path from 10) where
-                        status = '200 OK' group by title order by count desc;''')
+                        status = '200 OK' group by title order
+                        by count desc;''')
     pop_list = pop_articles.fetchall()
     print('\n')
     print('[+] Most Popular Articles')
@@ -32,6 +33,7 @@ def top_articles():
     print('\n')
     print('*' * 40)
     conn.close()
+
 
 def top_authors():
 
@@ -49,6 +51,7 @@ def top_authors():
     print('*' * 40)
     conn.close()
 
+
 def errors():
 
     conn = psycopg2.connect(database="news")
@@ -64,6 +67,7 @@ def errors():
     print('\n')
     print('*' * 40)
     conn.close()
+
 
 def main():
 
@@ -112,5 +116,5 @@ def main():
         print('[+] Reports Complete')
         print('\n')
 
-if __name__==__name__:
+if __name__ == __name__:
     main()
