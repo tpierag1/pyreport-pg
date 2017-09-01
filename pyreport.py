@@ -21,7 +21,7 @@ def top_articles():
     pop_articles.execute('''select title, count(path) from articles join log on
                         articles.slug = substring(log.path from 10) where
                         status = '200 OK' group by title order
-                        by count desc;''')
+                        by count desc limit 3;''')
     pop_list = pop_articles.fetchall()
     print('\n')
     print('[+] Most Popular Articles')
@@ -38,8 +38,7 @@ def top_authors():
     conn = psycopg2.connect(database="news")
     pop_authors = conn.cursor()
     pop_authors.execute('''select name, views from authors, author_views where
-                        authors.id=author_views.author order by views desc
-                        limit 3;''')
+                        authors.id=author_views.author order by views desc;''')
     pop_auth_list = pop_authors.fetchall()
     print('\n')
     print('[+] Most Popular Authors')
