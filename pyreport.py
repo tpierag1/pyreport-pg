@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 
-import os
 import psycopg2
-import sys
 
 print('''
 
@@ -40,7 +38,8 @@ def top_authors():
     conn = psycopg2.connect(database="news")
     pop_authors = conn.cursor()
     pop_authors.execute('''select name, views from authors, author_views where
-                        authors.id=author_views.author order by views desc;''')
+                        authors.id=author_views.author order by views desc
+                        limit 3;''')
     pop_auth_list = pop_authors.fetchall()
     print('\n')
     print('[+] Most Popular Authors')
